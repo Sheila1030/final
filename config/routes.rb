@@ -5,6 +5,11 @@ Final::Application.routes.draw do
 # Specify a custom home page
   get "/" => "homepage#index"
 
+# Sign-In and Sign-Out
+
+  get "/login" => 'sessions#login'
+  post "/authenticate" => 'sessions#authenticate'
+
 
   # Resource: Users
 
