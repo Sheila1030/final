@@ -2,6 +2,65 @@ Final::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+# Specify a custom home page
+  get "/" => "homepage#index"
+
+
+  # Resource: Users
+
+  # --- Create
+  get "/users/new" => 'users#new'
+  post "/users" => 'users#create'
+
+  # --- Read
+  get "/users" => 'users#index'
+  get "/users/:id" => 'users#show'
+
+  # -- Update
+  get "/users/:id/edit" => 'users#edit'
+  patch "/users/:id" => 'users#update'
+
+  # --- Delete
+  delete "/users/:id" => 'users#destroy'
+
+
+  # Resource: Locations
+
+  # --- Read
+  get "/locations" => 'locations#index'
+  get "/locations/:id" => 'locations#show'
+
+
+  # Resource: Activities
+
+  # --- Create
+  get "/activities/new" => 'activities#new'
+  post "/activities" => 'activities#create'
+
+  # --- Read
+  get "/activities" => 'activities#index'
+  get "/activities/:id" => 'activities#show'
+
+
+  # -- Update
+  get "/activities/:id/edit" => 'activities#edit'
+  patch "/activities/:id" => 'activities#update'
+
+  # --- Delete
+  delete "/activities/:id" => 'activities#destroy'
+
+  # Resource: Types
+
+  # --- Read
+  get "/types" => 'types#index'
+  get "/types/:id" => 'movies#show'
+
+  # --- Delete
+  delete "/types/:id" => 'types#destroy'
+
+
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

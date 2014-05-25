@@ -1,0 +1,29 @@
+<% all_activities = Activity.read %>
+
+<h2>Workouts</h2>
+
+<%= link_to "Add a New Workout", "/activities/new" %>
+
+<ul>
+
+  <% all_activities.each do |activity| %>
+
+    <li>
+
+<%= link_to activity["activity"], "/activities/#{activity["id"]}" %>
+
+
+
+
+    </li>
+
+  <% end %>
+
+</ul>
+
+<% all_activities.each do |activity| %>
+  <%= image_tag activity["photo_url"], "width" => "240" %>
+<% end %>
+
+
+
