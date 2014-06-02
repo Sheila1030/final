@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529043725) do
+ActiveRecord::Schema.define(version: 20140602214043) do
 
   create_table "activities", force: true do |t|
     t.string "activity"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20140529043725) do
     t.string   "user_id"
     t.integer  "combo_id"
     t.datetime "created_at"
+    t.date     "day"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
 end
