@@ -1,13 +1,18 @@
 class SessionsController < ApplicationController
 
+  def logout
+    cookies["user_id"] = nil
+    redirect_to "/", :notice => "See ya!"
+  end
+
   def authenticate
     the_user = User.find_by("username" => params["username"])
     if the_user != nil
       if the_user["password"] == params["password"]
         cookies["user_id"] = the_user["id"]
-        redirect_to "/", :notice => "Wazzzup"
+        redirect_to "/", :notice => "Ready to become fit??"
       else
-        logger.debug "Wazzzzup!"
+        logger.debug "Not There"
         redirect_to "/login", :notice => "Unknown password."
       end
     else

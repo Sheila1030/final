@@ -1,19 +1,17 @@
 <% activity_id = params["id"] %>
 <% activity = Activity.read(activity_id) %>
 
-<div class="row">
-
-  <div class="col-md-1">
-    <%= image_tag(activity["poster_url"]) %>
-  </div>
 
   <div class="col-md-8">
-    <h1><%= activity["activity"] %>
-      <small>Intensity: <%= activity["intensity"] %></small>
-      <small>Equipment: <%= activity["equipment"] %></small>
-    </h1>
+    <h1><%= activity["activity"] %> </h1>
 
+    <li>
+      <strong>Intensity:</strong> <%= activity["intensity"] %>
+</li>
+<li>
+      <strong>Equipment:</strong> <%= activity["equipment"] %>
 
+</li>
 
 
 

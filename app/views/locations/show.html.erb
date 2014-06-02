@@ -1,3 +1,4 @@
+
 <% location_id = params["id"] %>
 <% the_location = Location.read(location_id) %>
 <% combo = Combo.where("location_id" => the_location["id"]) %>
@@ -8,9 +9,11 @@
 
    <img src= "<%= the_location["loc_photo"] %>" width="120" >
 
- <p> <%= link_to "Class Schedule", the_location["schedule_link"] %> </p>
+<p> <%= link_to "Class Schedule", the_location["schedule_link"] %> </p>
 
- <p> <%= link_to "Website", the_location["website_link"] %> </p>
+<p> <%= link_to "Website", the_location["website_link"] %> </p>
+
+
 
 <h4>Activities Offered at this Location</h4>
 
@@ -26,3 +29,8 @@
   <% end %>
 
 </ul>
+<div class="column">
+<div class="col-md-6">
+<iframe src="<%= the_location["schedule_link"] %>" </iframe>
+
+

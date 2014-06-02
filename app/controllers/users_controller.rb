@@ -9,7 +9,7 @@ class UsersController < ApplicationController
                   "password" => params["password"],
                   "name" => params["name"])
 
-      redirect_to "/movies"
+      redirect_to "/"
     else
       @message = "That username is taken.  Try again."
       render "new"

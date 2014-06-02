@@ -3,7 +3,7 @@ eac = Location.create("name" => "Evanston Athletic Club (EAC)", "address" => "17
 ult = Location.create("name" => "Ult Fitness (Ult)", "address" => "823 Emerson St, Evanston, IL 60201, (847) 866-6190", "loc_photo" => "http://ultfitev.com/images/Ultifit_logo_silver_silver.gif", "schedule_link" => "http://ultfitev.com/new/chicago_boxing_jiu-jitsu_schedule.html", "website_link" => "http://ultfitev.com/")
 spac = Location.create("name" => "SPAC", "address" => "2311 Campus Drive Evanston, IL 60208-4230, 847-491-4300", "loc_photo" => "http://www.fitrec.northwestern.edu/media/images/facility/Temp-Entrance", "schedule_link" => "http://www.fitrec.northwestern.edu/classes/group/index.html", "website_link" => "www.fitrec.northwestern.edu/")
 fg = Location.create("name" => "Fit Girl", "address" => "1642 Maple Ave., Evanston, IL 60201, (847) 869-4475", "loc_photo" => "http://static.wixstatic.com/media/eb9701_b9dca7cdf83a1443a6b5b1f8cb418fcc.png_srz_p_524_115_75_22_0.50_1.20_0.00_png_srz", "schedule_link" => "http://www.fitgirlstudio.com/#!classes/c13j7", "website_link" => "http://www.fitgirlstudio.com/")
-outside = Location.create("name" => "Outside", "address" => "Anywhere Outside", "loc_photo" => "http://dadsroundtable.com/wp-content/uploads/2012/09/the-meadow-by-the-saskatchewan-river-1024x768.jpg", "schedule_link" => "N/A", "website_link" => "N/A")
+outside = Location.create("name" => "Outside", "address" => "Anywhere Outside", "loc_photo" => "http://dadsroundtable.com/wp-content/uploads/2012/09/the-meadow-by-the-saskatchewan-river-1024x768.jpg", "schedule_link" => "http://www.cityofevanston.org/assets/park2.jpg", "website_link" => "http://www.cityofevanston.org/assets/park2.jpg")
 
 
 Activity.delete_all
@@ -51,6 +51,10 @@ sheila = User.create("username" => "ssh1030", "password" => "running", "name" =>
 jordan = User.create("username" => "jcstewart09", "password" => "swimming", "name" => "Jordan Stewart")
 
 
+
+
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -58,3 +62,5 @@ jordan = User.create("username" => "jcstewart09", "password" => "swimming", "nam
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+

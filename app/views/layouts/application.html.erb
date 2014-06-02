@@ -28,13 +28,14 @@
           </div>
           <div class="pull-right">
             <% user = User.find_by("id" => cookies["user_id"]) %>
-            <% if user != nil %>
-              <%= user["name"] %>
+            <% if user.present? %>
+              Hi, <%= user["name"] %>!
+              <%= link_to "My Profile", "/users/#{user["id"]}" %> |
+              <%= link_to "Sign Out", '/logout' %>
+            <% else %>
+              <%= link_to "Sign Up", '/users/new' %> |
+              <%= link_to "Sign In", '/login' %>
             <% end %>
-            <%= link_to "Sign Up", '/users/new' %> |
-            <%= link_to "Sign In", '/login' %> |
-            <%= link_to "My Profile", '#' %> |
-            <%= link_to "Sign Out", '/logout' %>
           </div>
         </div>
         <hr>

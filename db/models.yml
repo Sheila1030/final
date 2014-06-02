@@ -21,6 +21,14 @@ Combo:
   - location_id: string
   - type_id: string
 
+Workout:
+  - user_id: string
+  - combo_id: integer
+  - day: date
+  - start_time: timestamp
+  - end_time: timestamp
+
+
 User:
   - username: string
   - password: string

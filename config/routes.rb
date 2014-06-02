@@ -58,10 +58,33 @@ Final::Application.routes.draw do
 
   # --- Read
   get "/types" => 'types#index'
-  get "/types/:id" => 'movies#show'
+  get "/types/:id" => 'types#show'
 
   # --- Delete
   delete "/types/:id" => 'types#destroy'
+
+  # Sign-In and Sign-Out
+
+  get "/logout" => 'sessions#logout'
+  get "/login" => 'sessions#login'
+  post "/authenticate" => 'sessions#authenticate'
+
+  # Resource: Workouts
+
+  # --- Create
+  get "/workouts/new" => 'workouts#new'
+  post "/workouts" => 'workouts#create'
+
+  # --- Read
+  get "/workouts" => 'workouts#index'
+  get "/workouts/:id" => 'workouts#show'
+
+  # -- Update
+  get "/workouts/:id/edit" => 'workouts#edit'
+  patch "/workouts/:id" => 'workouts#update'
+
+  # --- Delete
+  delete "/workouts/:id" => 'workouts#destroy'
 
 
 

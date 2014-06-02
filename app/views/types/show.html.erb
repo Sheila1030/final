@@ -1,0 +1,20 @@
+<% type_id = params["id"] %>
+<% the_type = Type.read(type_id) %>
+<% combo = Combo.where("type_id" => the_type["id"]) %>
+
+<h2> <%= the_type["name"].upcase %></h2>
+
+<h4>Here are some great options for you!</h4>
+
+<ul>
+
+  <% combo.each do |combo| %>
+      <% activity = Activity.find_by("id" => combo["activity_id"]) %>
+      <% location = Location.find_by("id" => combo["location_id"]) %>
+    <li>
+      <strong><%= activity["activity"] %> (<%=location["name"] %>) </strong>
+    </li>
+
+  <% end %>
+
+</ul>

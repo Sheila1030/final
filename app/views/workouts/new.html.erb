@@ -1,0 +1,27 @@
+<% user_id = params["id"] %>
+<% user = User.read(user_id) %>
+
+
+<div class="page-header">
+  <h1>Add a New workout to your workout plan!</h1>
+</div>
+
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/workouts", "method" => "post"  %>
+
+      <div class="form-group">
+        <%= label_tag "chosen_combo_id", "What workout do you want to add?" %>
+        <%= select_tag "chosen_combo_id",
+                       options_from_collection_for_select(Combo.read.order("location_id"),
+                        "id",
+                        "location_id"), "class" => "form-control" %>
+
+
+      <%= submit_tag "Add This Workout", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/users" %>
+
+    </form>
+</div>
+</div>
