@@ -76,7 +76,7 @@ Final::Application.routes.draw do
   post "/workouts" => 'workouts#create'
 
   # --- Read
-  get "/workouts" => 'workouts#index'
+  get "/workouts" => 'activities#index'
   get "/workouts/:id" => 'workouts#show'
 
   # -- Update
