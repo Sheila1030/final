@@ -1,47 +1,23 @@
 <% user_id = params["id"] %>
 <% user = User.read(user_id) %>
 
-My Favorite workouts are: Swimming, running, and Boxing (but only if it's with Sheila!)
 
-<div class="row">
 
-  <div class="col-md-3">
-    Sunday
+    <% fitfriend = Workout.where("user_id" => user["id"]) %>
 
-  </div>
+    <% fitfriend.read.order("day desc").each do |workout| %>
+    <h3> <%= workout["day"] %> </h3>
+    <p> Starting at: <%= workout["start_time"] %> Ending at: <%= workout["end_time"] %> </p>
 
-  <div class="col-md-3">
-    Monday
+        <% Combo.where("id" => workout["combo_id"]).each do |combo| %>
+        <% location = Location.find_by("id" => combo["location_id"]) %>
+        <% activity = Activity.find_by("id" => combo["activity_id"]) %>
+        <% type = Type.find_by("id" => combo["type_id"]) %>
 
-  </div>
+        <% my_workout = "#{location["name"]}, #{activity["activity"]}, #{type["name"]}" %>
 
-  <div class="col-md-3">
-    Tuesday
+        <%= my_workout %>
 
-  </div>
+<%end%>
 
-  <div class="col-md-3">
-    Wednesday
-
-</div>
-
-<div class="row">
-
-  </div>
-
-  <div class="col-md-3">
-    Thursday
-
-  </div>
-
-  <div class="col-md-3">
-    Friday
-
-  </div>
-
-  <div class="col-md-3">
-    Saturday
-
-  </div>
-
-</div>
+<%end%>

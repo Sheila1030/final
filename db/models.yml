@@ -23,10 +23,10 @@ Combo:
 
 Workout:
   - user_id: string
-  - combo_id: integer
+  - combo_id: string
   - day: date
-  - start_time: timestamp
-  - end_time: timestamp
+  - start_time: time
+  - end_time: time
 
 
 User:

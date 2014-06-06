@@ -3,29 +3,58 @@
 
 
 <div class="page-header">
-  <h1>Add a New workout to your workout plan!</h1>
+  <h1>Add a new workout to your workout plan!</h1>
 </div>
-
 
 <div class="row">
   <div class="col-md-5">
 
-<form action="/workouts" method="post">
+
+
+<%= form_tag "/workouts", "method" => "post"  %>
 
 
       <div class="form-group">
-
-<%= label_tag "chosen_combo_id", "What workout do you want to add?" %>
-        <%= select_tag "chosen_combo_id",
-                       options_from_collection_for_select(Combo.read.order("location_id"),
-                        "id",
-                        "location_id"), "class" => "form-control" %>
+        <%= label_tag "day", "What day will you workout?" %>
+        <%= date_field_tag "day", "", "class" => "form-control" %>
+      </div>
 
 
+  <div class="form-group">
+        <%= label_tag "start_time", "Activity Start Time:" %>
+        <%= time_field_tag "start_time", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "end_time", "Activity End Time:" %>
+        <%= time_field_tag "end_time", "", "class" => "form-control" %>
+      </div>
+
+
+  <div class="col-md-30">
+
+  <div class="form-group">
+    <p>  <% options_array = [] %>
+        <% Combo.read.order("location_id").each do |combo| %>
+        <% location = Location.find_by("id" => combo["location_id"]) %>
+        <% activity = Activity.find_by("id" => combo["activity_id"]) %>
+        <% type = Type.find_by("id" => combo["type_id"]) %>
+
+        <% workout = "#{location["name"]}, #{activity["activity"]}, #{type["name"]}" %>
+        <% options_array << [workout, combo["id"]] %>
+<% end %>
+
+        <% options= options_for_select(options_array) %> </p>
+
+   <p>     <%= select_tag "chosen_combo_id",
+                       options, "class" => "form-control" %> </p>
 
 
       <%= submit_tag "Add This Workout", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/users" %>
 
+
     </form>
 </div>
 </div>
+</div>
+

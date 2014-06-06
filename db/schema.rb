@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602214043) do
+ActiveRecord::Schema.define(version: 20140606043359) do
 
   create_table "activities", force: true do |t|
     t.string "activity"
@@ -34,23 +34,21 @@ ActiveRecord::Schema.define(version: 20140602214043) do
     t.string "website_link"
   end
 
+
   create_table "types", force: true do |t|
     t.string "name"
   end
 
-  create_table "users", force: true do |t|
-    t.string "username"
-    t.string "password"
-    t.string "name"
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "workouts", force: true do |t|
     t.string   "user_id"
-    t.integer  "combo_id"
+    t.string   "combo_id"
     t.datetime "created_at"
     t.date     "day"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
   end
 
 end

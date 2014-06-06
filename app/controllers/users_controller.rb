@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+def show
+  @user = User.find(params[:id])
+
+end
+
+
 
   def create
     existing_user = User.find_by("username" => params["username"])

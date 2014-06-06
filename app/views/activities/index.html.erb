@@ -2,8 +2,6 @@
 
 <h2>Workouts</h2>
 
-<%= link_to "Add a New Workout", "/workouts/new" %>
-
 <ul>
 
   <% all_activities.each do |activity| %>
@@ -12,7 +10,8 @@
 
 <%= link_to activity["activity"], "/activities/#{activity["id"]}" %>
 
-    </li>
+
+   </li>
 
   <% end %>
 
@@ -21,6 +20,4 @@
 <% all_activities.each do |activity| %>
   <%= image_tag activity["photo_url"], "width" => "240" %>
 <% end %>
-
-
 
