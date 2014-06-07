@@ -2,7 +2,6 @@
 
 Not a Fit Friend Yet?  <%= link_to "Sign Up to Become a Fit Friend", "/users/new" %>
 
-
 <h2>Look at who is staying Fit!  Click on a Fit Friend to see how they are staying fit! </h2>
 
 <ul>
@@ -10,9 +9,11 @@ Not a Fit Friend Yet?  <%= link_to "Sign Up to Become a Fit Friend", "/users/new
   <% all_users.each do |user| %>
 
     <li>
+      <%= image_tag user["photo_url"], "width" => "120" %>
       <%= link_to user["name"], "/users/#{user["id"]}" %>
     </li>
 
-  <% end %>
+        <% end %>
 
 </ul>
+

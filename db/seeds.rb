@@ -47,8 +47,9 @@ Combo.create("activity_id" => wght.id, "location_id" => eac.id, "type_id" => str
 Combo.create("activity_id" => cyng.id, "location_id" => outside.id, "type_id" => cardio.id)
 
 User.delete_all
-sheila = User.create("username" => "ssh1030", "password" => "running", "name" => "Sheila Shah")
-jordan = User.create("username" => "jcstewart09", "password" => "swimming", "name" => "Jordan Stewart")
+sheila = User.create("username" => "ssh1030", "password" => "running", "name" => "Sheila Shah", "photo_url" => "https://scontent-b-ord.xx.fbcdn.net/hphotos-xap1/t1.0-9/1012142_10101212221854482_1836347964623012681_n.jpg")
+jordan = User.create("username" => "jcstewart09", "password" => "swimming", "name" => "Jordan Stewart", "photo_url" => "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/2668_547438721384_4891016_n.jpg")
+
 
 
 

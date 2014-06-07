@@ -7,17 +7,15 @@
   <% all_activities.each do |activity| %>
 
     <li>
-
-<%= link_to activity["activity"], "/activities/#{activity["id"]}" %>
-
-
+  <%= link_to activity["activity"], "/activities/#{activity["id"]}" %>
    </li>
 
   <% end %>
 
 </ul>
 
-<% all_activities.each do |activity| %>
+  <% all_activities.each do |activity| %>
   <%= image_tag activity["photo_url"], "width" => "240" %>
+
 <% end %>
 

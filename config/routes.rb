@@ -38,10 +38,6 @@ Final::Application.routes.draw do
 
   # Resource: Activities
 
-  # --- Create
-  get "/activities/new" => 'activities#new'
-  post "/activities" => 'activities#create'
-
   # --- Read
   get "/activities" => 'activities#index'
   get "/activities/:id" => 'activities#show'

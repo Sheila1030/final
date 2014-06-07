@@ -1,16 +1,10 @@
 <% all_locations = Location.read %>
 
 <h2>Here are places you can workout in Evanston!</h2>
-
 <ul>
-
   <% all_locations.each do |location| %>
-
     <li>
       <%= link_to location["name"], "/locations/#{location["id"]}" %>
-
     </li>
-
   <% end %>
-
 </ul>

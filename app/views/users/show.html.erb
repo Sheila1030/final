@@ -1,23 +1,45 @@
+
 <% user_id = params["id"] %>
 <% user = User.read(user_id) %>
 
+<div class="thumbnail clearfix" >
+<div class="pull-left">
+   <%= image_tag user["photo_url"], "width" => "220"  %>
+<div class="caption" class="pull-right">
+</div>
+</div>
+<div class="thumbnail clearfix" >
+<div class="caption" class="pull-right">
 
-
-    <% fitfriend = Workout.where("user_id" => user["id"]) %>
-
+ <% fitfriend = Workout.where("user_id" => user["id"]) %>
     <% fitfriend.read.order("day desc").each do |workout| %>
-    <h3> <%= workout["day"] %> </h3>
-    <p> Starting at: <%= workout["start_time"] %> Ending at: <%= workout["end_time"] %> </p>
+    <h3> <%= workout["day"].strftime("%A, %B %d, %Y") %> </h3>
+    <p> Starting at: <%= workout["start_time"].strftime("%I:%M %p") %> Ending at: <%= workout["end_time"].strftime("%I:%M %p") %> </p>
 
         <% Combo.where("id" => workout["combo_id"]).each do |combo| %>
         <% location = Location.find_by("id" => combo["location_id"]) %>
         <% activity = Activity.find_by("id" => combo["activity_id"]) %>
+        <% photo = User.find_by("id" => combo["photo_url_id"]) %>
         <% type = Type.find_by("id" => combo["type_id"]) %>
 
-        <% my_workout = "#{location["name"]}, #{activity["activity"]}, #{type["name"]}" %>
-
+   <% my_workout = "#{location["name"]}, #{activity["activity"]}, #{type["name"]}" %>
+<div class= "caption" class="pull-right">
+ <li>
         <%= my_workout %>
+</li>
 
+</div>
 <%end%>
+<%end%>
+   </div>
+  </div>
+</div>
 
-<%end%>
+
+
+
+
+
+
+
+

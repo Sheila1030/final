@@ -20,6 +20,7 @@ Combo:
   - activity_id: string
   - location_id: string
   - type_id: string
+  - photo_url_id: string
 
 Workout:
   - user_id: string
@@ -28,11 +29,12 @@ Workout:
   - start_time: time
   - end_time: time
 
-
 User:
   - username: string
   - password: string
   - name: string
+  - photo_url: string
+
 
 
 

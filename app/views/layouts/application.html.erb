@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KIEI-925</title>
+    <title>Fit Friends!</title>
 
     <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
-
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
-
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -32,6 +30,7 @@
             <% if user.present? %>
               Hi, <%= user["name"] %>!
               <%= link_to "My Profile", "/users/#{user["id"]}" %> |
+              <%= link_to "Update My Profile", "/users/#{user["id"]}/edit" %> |
               <%= link_to "Add a New Workout", "/workouts/new" %> |
               <%= link_to "Sign Out", '/logout' %>
             <% else %>
@@ -44,10 +43,11 @@
         <h4 class="text-warning"><%= notice %></h4>
       </div>
 
-
       <%= yield %>
-
     <div>
-
   </body>
+</html>
+</div>
+</div>
+</body>
 </html>

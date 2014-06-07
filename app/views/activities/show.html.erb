@@ -1,17 +1,15 @@
 <% activity_id = params["id"] %>
 <% activity = Activity.read(activity_id) %>
 
-
   <div class="col-md-8">
-    <h1><%= activity["activity"] %> </h1>
+  <h1><%= activity["activity"] %> </h1>
 
     <li>
       <strong>Intensity:</strong> <%= activity["intensity"] %>
-</li>
-<li>
+    </li>
+    <li>
       <strong>Equipment:</strong> <%= activity["equipment"] %>
-
-</li>
+    </li>
 
 
 

@@ -1,19 +1,14 @@
 class UsersController < ApplicationController
 
-def show
-  @user = User.find(params[:id])
 
-end
-
-
-
-  def create
+def create
     existing_user = User.find_by("username" => params["username"])
 
-    if existing_user == nil
+   if existing_user == nil
       User.create("username" => params["username"],
                   "password" => params["password"],
-                  "name" => params["name"])
+                  "name" => params["name"],
+                  "photo_url" => params["photo_url"])
 
       redirect_to "/"
     else
@@ -22,12 +17,17 @@ end
     end
   end
 
+
+
   def update
-    the_user = User.find_by(params["id"])
+    the_user = User.find_by("username" => params["username"])
     the_user.update("username" => params["username"],
                 "password" => params["password"],
-                "name" => params["name"])
-    redirect_to '/users/#{the_user["id"]}'
+                "name" => params["name"],
+                "photo_url" => params["photo_url"])
+
+
+    redirect_to "/users/#{the_user["id"]}"
   end
 
 end
