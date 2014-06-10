@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 
+
 def create
     existing_user = User.find_by("username" => params["username"])
 
@@ -15,12 +16,11 @@ def create
       @message = "That username is taken.  Try again."
       render "new"
     end
-  end
+end
 
 
-
-  def update
-    the_user = User.find_by("username" => params["username"])
+def update
+    the_user = User.find_by("id" => params["id"])
     the_user.update("username" => params["username"],
                 "password" => params["password"],
                 "name" => params["name"],
@@ -31,3 +31,6 @@ def create
   end
 
 end
+
+
+

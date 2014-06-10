@@ -1,8 +1,8 @@
 <% all_users = User.read %>
 
-Not a Fit Friend Yet?  <%= link_to "Sign Up to Become a Fit Friend", "/users/new" %>
+<h2> <strong> <font color = "blue"> Look at who is staying Fit!  Click on a Fit Friend to see how they are staying fit! </font> </strong> </h2>
 
-<h2>Look at who is staying Fit!  Click on a Fit Friend to see how they are staying fit! </h2>
+<h3> <em> Not a Fit Friend Yet?  <%= link_to "Sign Up to Become a Fit Friend", "/users/new" %> </em> </h3>
 
 <ul>
 
@@ -13,7 +13,9 @@ Not a Fit Friend Yet?  <%= link_to "Sign Up to Become a Fit Friend", "/users/new
       <%= link_to user["name"], "/users/#{user["id"]}" %>
     </li>
 
-        <% end %>
+  <% end %>
 
 </ul>
+
+
 

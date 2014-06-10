@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607172729) do
+ActiveRecord::Schema.define(version: 20140609025920) do
 
   create_table "activities", force: true do |t|
     t.string "activity"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20140607172729) do
     t.string "activity_id"
     t.string "location_id"
     t.string "type_id"
-    t.string "photo_url_id"
   end
 
   create_table "locations", force: true do |t|

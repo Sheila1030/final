@@ -1,5 +1,3 @@
-# Example table for a typical Book model.
-
 Location:
   - name: string
   - address: string
@@ -20,7 +18,6 @@ Combo:
   - activity_id: string
   - location_id: string
   - type_id: string
-  - photo_url_id: string
 
 Workout:
   - user_id: string
@@ -38,8 +35,8 @@ User:
 
 
 
-
-
+# Example table for a typical Book model.
+#
 # Book:
 #   - title: string
 #   - price: integer

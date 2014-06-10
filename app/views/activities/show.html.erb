@@ -1,15 +1,25 @@
 <% activity_id = params["id"] %>
-<% activity = Activity.read(activity_id) %>
+<% the_activity = Activity.read(activity_id) %>
+<% combo = Combo.where("activity_id" => the_activity["id"]) %>
 
   <div class="col-md-8">
-  <h1><%= activity["activity"] %> </h1>
+  <h1><%= the_activity["activity"] %> </h1>
 
     <li>
-      <strong>Intensity:</strong> <%= activity["intensity"] %>
+      <strong>Intensity:</strong> <%= the_activity["intensity"] %>
     </li>
     <li>
-      <strong>Equipment:</strong> <%= activity["equipment"] %>
+      <strong>Equipment:</strong> <%= the_activity["equipment"] %>
     </li>
 
+<h3> Where can you perform this activity? </h3>
 
+  <% combo.each do |combo| %>
+  <% location = Location.find_by("id" => combo["location_id"]) %>
+
+  <li>
+    <%= location["name"] %>
+  </li>
+
+<% end %>
 
