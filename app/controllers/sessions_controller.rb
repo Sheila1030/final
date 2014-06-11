@@ -19,5 +19,4 @@ class SessionsController < ApplicationController
       redirect_to "/login", :notice => "Unknown username."
     end
   end
-
 end

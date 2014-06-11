@@ -1,7 +1,5 @@
 class WorkoutsController < ApplicationController
 
-
-
   def create
     Workout.create("combo_id" => params["chosen_combo_id"],
                     "day" => params["day"],

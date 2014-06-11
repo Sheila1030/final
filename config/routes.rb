@@ -25,8 +25,6 @@ Final::Application.routes.draw do
   get "/users/:id/edit" => 'users#edit'
   patch "/users/:id" => 'users#update'
 
-  # --- Delete
-  delete "/users/:id" => 'users#destroy'
 
 
   # Resource: Locations
@@ -47,8 +45,6 @@ Final::Application.routes.draw do
   get "/activities/:id/edit" => 'activities#edit'
   patch "/activities/:id" => 'activities#update'
 
-  # --- Delete
-  delete "/activities/:id" => 'activities#destroy'
 
   # Resource: Types
 
@@ -56,8 +52,7 @@ Final::Application.routes.draw do
   get "/types" => 'types#index'
   get "/types/:id" => 'types#show'
 
-  # --- Delete
-  delete "/types/:id" => 'types#destroy'
+
 
   # Sign-In and Sign-Out
 
@@ -78,9 +73,6 @@ Final::Application.routes.draw do
   # -- Update
   get "/workouts/:id/edit" => 'workouts#edit'
   patch "/workouts/:id" => 'workouts#update'
-
-  # --- Delete
-  delete "/workouts/:id" => 'workouts#destroy'
 
 
 

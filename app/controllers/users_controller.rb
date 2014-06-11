@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-
-
 def create
     existing_user = User.find_by("username" => params["username"])
 
@@ -25,8 +23,6 @@ def update
                 "password" => params["password"],
                 "name" => params["name"],
                 "photo_url" => params["photo_url"])
-
-
     redirect_to "/users/#{the_user["id"]}"
   end
 

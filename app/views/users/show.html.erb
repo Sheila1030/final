@@ -1,14 +1,12 @@
 <% user_id = params["id"] %>
 <% user = User.read(user_id) %>
 
-
-
     <%= image_tag user["photo_url"], "width" => "120"  %>
 
-<div class= "caption" class="pull-right">
+    <div class= "caption" class="pull-right">
 
 
-<% fitfriend = Workout.where("user_id" => user["id"]) %>
+    <% fitfriend = Workout.where("user_id" => user["id"]) %>
     <% fitfriend.read.order("day desc").each do |workout| %>
     <h3> <%= workout["day"].strftime("%A, %B %d, %Y") %> </h3>
     <p> Starting at: <%= workout["start_time"].strftime("%I:%M %p") %> Ending at: <%= workout["end_time"].strftime("%I:%M %p") %> </p>
@@ -20,19 +18,15 @@
 
    <% my_workout = "#{location["name"]}, #{activity["activity"]}, #{type["name"]}" %>
 
-<div class= "caption" class="pull-right">
-
-
+    <div class= "caption" class="pull-right">
 
 <li>
         <%= image_tag "#{activity["photo_url"]}", "width" => "120" %>
         <%= my_workout %>
-        (<%= link_to "Delete", "/users/#{user["id"]}", "method" => "delete" %>)
-
 </li>
 
 
-    </div>
+   </div>
 <%end%>
 <%end%>
    </div>
