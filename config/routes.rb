@@ -41,11 +41,6 @@ Final::Application.routes.draw do
   get "/activities/:id" => 'activities#show'
 
 
-  # -- Update
-  get "/activities/:id/edit" => 'activities#edit'
-  patch "/activities/:id" => 'activities#update'
-
-
   # Resource: Types
 
   # --- Read
